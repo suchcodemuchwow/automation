@@ -1,0 +1,5 @@
+#!/bin/bash
+
+notifier=/usr/local/bin/terminal-notifier
+
+$notifier -title "Every minute" -message "Crontab" -sound default

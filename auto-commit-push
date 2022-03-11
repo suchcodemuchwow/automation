@@ -1,0 +1,19 @@
+#!/bin/bash
+
+any_changes=$( git status --porcelain | wc -l )
+
+if [[ $any_changes -gt 0 ]];
+then
+    changed_files_arr=( $(git ls-files --other --modified --exclude-standard | awk '{ print $1 }') )
+    echo ✅ Changes detected at \'$(pwd)\'
+    changed_files_str_with_leading_comma=$(printf ", %s" "${changed_files_arr[@]}")
+    changed_files_str=${changed_files_str_with_leading_comma:2}
+    echo "Changed files: ($changed_files_str)"
+    date_str=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    echo $date_str
+    git add .
+    git commit -m "Auto commit at $date_str" -m "Changed files: ($changed_files_str)"
+else
+    echo 🚫 No changes
+fi
+
