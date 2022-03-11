@@ -1,0 +1,3 @@
+gh repo create "$1" --public --clone --gitignore Node 
+cd "$1"
+gh repo view --web
