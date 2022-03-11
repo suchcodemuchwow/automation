@@ -15,6 +15,6 @@ then
     git add .
     git commit -m "Auto commit at $date_str" -m "Changed files: ($changed_files_str)"
 else
-    $notifier -title "🚫 No changes" -message "$(pwd)" -sound default
+    $notifier -title "🚫 No changes" -message "$(pwd)" -sound default -group 31
 fi
 
