@@ -9,11 +9,10 @@ then
     echo ✅ Changes detected at \'$(pwd)\'
     changed_files_str_with_leading_comma=$(printf ", %s" "${changed_files_arr[@]}")
     changed_files_str=${changed_files_str_with_leading_comma:2}
-    echo "Changed files: ($changed_files_str)"
     date_str=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-    echo $date_str
     git add .
     git commit -m "Auto commit at $date_str" -m "Changed files: ($changed_files_str)"
+    $notifier -title '✅ Changes detected at project "${PWD##*/}" changes' -message "Changed files: ($changed_files_str)"
 else
     $notifier -title "🚫 No changes" -message "$(pwd)" -sound default -group 31
 fi
