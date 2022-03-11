@@ -16,6 +16,5 @@ then
     git push
 else
     echo 🚫 No changes at \'$(pwd)\'
-    echo "Works !!"
 fi
 
