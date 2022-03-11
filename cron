@@ -1,1 +1,2 @@
 * * * * * cd /Users/batu/Documents/suchcodemuchwow/automation; /Users/batu/Documents/suchcodemuchwow/automation/auto-commit-push > /tmp/stdout.log 2> /tmp/stderr.log
+0 * * * * /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome https://tasksboard.com/app --profile-directory=Profile\ 4
