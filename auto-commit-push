@@ -1,6 +1,7 @@
 #!/bin/bash
 
 any_changes=$( git status --porcelain | wc -l )
+notifier=/usr/local/bin/terminal-notifier
 
 if [[ $any_changes -gt 0 ]];
 then
@@ -14,6 +15,6 @@ then
     git add .
     git commit -m "Auto commit at $date_str" -m "Changed files: ($changed_files_str)"
 else
-    echo 🚫 No changes
+    $notifier -title "🚫 No changes" -message "automation scripts" -sound default
 fi
 
