@@ -13,6 +13,7 @@ then
     git add .
     git commit -m "Auto commit at $date_str" -m "Changed files: ($changed_files_str)"
     $notifier -title "✅ Changes at '${PWD##*/}'" -message "Changed files: ($changed_files_str)" -sound default
+    curl -u ${USERNAME} https://api.github.com/user/repos -d "{\"name\": \"${REPO_NAME}\", \"description\": \"${DESCRIPTION}\"}"
     git push -u origin master
 else
     echo 🚫 No changes detected at \'$(pwd)\'
