@@ -1,1 +1,1 @@
-* * * * * /Users/batu/Documents/suchcodemuchwow/automate-everything/hello > /tmp/stdout.log 2> /tmp/stderr.log
+* * * * * cd /Users/batu/Documents/suchcodemuchwow/automation; /Users/batu/Documents/suchcodemuchwow/automation/auto-commit-push > /tmp/stdout.log 2> /tmp/stderr.log

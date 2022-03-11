@@ -14,6 +14,6 @@ then
     git commit -m "Auto commit at $date_str" -m "Changed files: ($changed_files_str)"
     $notifier -title "✅ Changes at '${PWD##*/}'" -message "Changed files: ($changed_files_str)" -sound default
 else
-    $notifier -title "🚫 No changes" -message "$(pwd)" -sound default -group 31
+    echo 🚫 No changes at \'$(pwd)\'
 fi
 
