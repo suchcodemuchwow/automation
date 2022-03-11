@@ -15,5 +15,6 @@ then
     $notifier -title "✅ Changes at '${PWD##*/}'" -message "Changed files: ($changed_files_str)" -sound default
 else
     echo 🚫 No changes at \'$(pwd)\'
+    echo "Works !!"
 fi
 
